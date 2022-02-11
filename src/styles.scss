@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+// body {
+//     overflow: hidden; /* Hide scrollbars */
+// }
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    padding-bottom: 40px !important;
+}

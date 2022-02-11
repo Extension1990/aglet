@@ -1,0 +1,23 @@
+.form-control {
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+}
+
+// Remove focus fromall elements
+textarea:focus, input:focus{
+    outline: none !important;
+}
+
+@media screen and (max-width: 992px) {
+    .phone {
+        margin-top: 20px;
+    }
+    .contact-details {
+        margin-bottom: 50px;
+        margin-top: 15px;
+    }
+    .header {
+        margin-bottom: 15px !important;
+    }
+}
