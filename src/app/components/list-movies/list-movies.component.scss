@@ -11,3 +11,9 @@
 .date {
     font-size: 12px;
 }
+
+@media screen and (max-width: 992px) {
+    form {
+        float: start !important;
+    }
+}
