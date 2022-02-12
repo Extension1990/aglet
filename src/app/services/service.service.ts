@@ -35,4 +35,8 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}movie/${id}?api_key=${this.apiKey}`);
   }
 
+  searchInMovies(searchText: string) {
+    return this.http.get(`${this.searchUrl}search/movie?api_key=${this.apiKey}&query=${searchText}`);
+  }
+
 }

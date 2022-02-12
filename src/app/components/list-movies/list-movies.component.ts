@@ -10,8 +10,12 @@ export class ListMoviesComponent implements OnInit {
 
   movies: any;
   totalMovies: any;
+  searchResults: any;
+  searchText: string;
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService) {
+    this.searchText = '';
+  }
 
   ngOnInit(): void {
     this.getMovies(1);
@@ -26,6 +30,17 @@ export class ListMoviesComponent implements OnInit {
 
   switchPage(event: any) {
     this.getMovies(event.pageIndex + 1);
+  }
+
+  searchInMovies() {
+    this.service.searchInMovies(this.searchText).subscribe((response: any) => {
+      this.searchResults = response.results;
+      console.log(this.searchResults)
+    });
+  }
+
+  userSearch(event: any) {
+    this.searchText = event;
   }
 
 }
