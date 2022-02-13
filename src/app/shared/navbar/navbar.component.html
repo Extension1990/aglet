@@ -4,7 +4,9 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+    <!-- If user is not loggedin -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="!user">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" routerLinkActive="active-link">
           <a class="nav-link" aria-current="page" [routerLink]="['/movies']">Movies</a>
@@ -14,6 +16,21 @@
         </li>&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
           <a class="nav-link" class="btn btn-warning text-white" aria-current="page" [routerLink]="['/login']">Sign In</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- If user is logged in -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="user">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" routerLinkActive="active-link">
+          <a class="nav-link" aria-current="page" [routerLink]="['/movies']">All Movies</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active-link">
+          <a class="nav-link text-warning" aria-current="page">{{user.username}}</a>
+        </li>&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-danger btn-sm" aria-current="page" (click)="logout()">Logout</a>
         </li>
       </ul>
     </div>

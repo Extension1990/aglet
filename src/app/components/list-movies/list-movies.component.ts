@@ -31,13 +31,6 @@ export class ListMoviesComponent implements OnInit {
     });
   }
 
-  // getFavMovies(id: number) {
-  //   this.service.getFavMovies(id).subscribe((favMovies: any) => {
-  //     this.favMovies = favMovies;
-  //     console.log(this.favMovies)
-  //   })
-  // }
-
   switchPage(event: any) {
     this.getMovies(event.pageIndex + 1);
   }

@@ -11,7 +11,7 @@
             li {
                 a:hover {
                     color: #ffc107 !important;
-                    border-bottom: 1px solid #c0af00;
+                    border-bottom: transparent;
                 }
                 .nav-link.active {
                     color: #ececec !important;
@@ -29,4 +29,14 @@
 }
 .nav-link:hover {
     color: orange !important;
+}
+.btn-danger {
+    margin-top: 4px;
+    color: white !important;
+}
+
+@media screen and (max-width: 992px) {
+    .btn-danger {
+        margin-top: 0px !important;
+    }
 }
