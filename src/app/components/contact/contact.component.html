@@ -7,16 +7,25 @@
         <form action="" method="post" class="form-group">
           <div class="row">
             <div class="col-md-6">
-              <input type="text" name="fullName" class="form-control bg-light" placeholder="Enter your full name">
+              <mat-form-field class="form-field" appearance="fill" class="input">
+                <mat-label>Provide your full name</mat-label>
+                <input matInput name="fullName" autocomplete="auto" placeholder="Enter your full name">
+              </mat-form-field>
             </div>
             <div class="col-md-6">
-              <input type="text" name="phoneNumber" class="form-control bg-light phone" placeholder="Enter your phone number">
+              <mat-form-field class="input-field" appearance="fill" class="input">
+                <mat-label>Provide your phone number</mat-label>
+                <input matInput name="fullName" autocomplete="auto" placeholder="Enter your phone number">
+              </mat-form-field>
             </div>
             <div class="col-md-12">
-              <textarea name="message" class="form-control mt-4 bg-light" id="" cols="30" rows="5" placeholder="Enter your message here"></textarea>
+              <mat-form-field class="textarea" appearance="fill">
+                <mat-label>Type your message</mat-label>
+                <textarea matInput placeholder="Tell us what how we can help..." class="w-100" rows="6"></textarea>
+              </mat-form-field>
             </div>
             <div class="col-md-12">
-              <button class="btn btn-warning w-100 mt-4">Send message</button>
+              <button class="btn btn-warning w-100 mt-1">Send message</button>
             </div>
           </div>
         </form>
@@ -24,12 +33,39 @@
     </div>
     <div class="col-md-4 contact-details">
       <h5>Extension Tlhareseng</h5>
-      <p>
-        Cell: +27 (0) 65 517 3773 <br>
-        email: extensiontlhareseng@gmail.com <br>
-        Address: 7 6th Street, Melville, Johannesburg <br>
-        Postal Code: 2092
-      </p>
+        <div class="d-flex">
+          <mat-icon aria-hidden="false" aria-label="phone icon">phone</mat-icon> &nbsp;&nbsp;
+          <span>Cell: +27 (0) 65 517 3773</span>
+        </div>
+        <div class="d-flex">
+          <mat-icon aria-hidden="false" aria-label="email icon">email</mat-icon> &nbsp;&nbsp;
+          <span>extensiontlhareseng@gmail.com</span>
+        </div>
+        <div class="d-flex">
+          <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon> &nbsp;&nbsp;
+          <span>7 6th street, Melville, Johannesburg</span>
+        </div>
+        <div class="d-flex">
+          <mat-icon aria-hidden="false" aria-label="envelope icon">envelope</mat-icon> &nbsp;&nbsp;
+          <span>2092</span>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <a href="" class="btn btn-linkedIn">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">linkedin</mat-icon>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="" class="btn btn-facebook">
+              <mat-icon aria-hidden="false" aria-label="Example fb icon">facebook</mat-icon>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="" class="btn btn-twitter">
+              <mat-icon aria-hidden="false" aria-label="Example twitter icon">twitter</mat-icon>
+            </a>
+          </div>
+        </div>
     </div>
   </div>
 </div>

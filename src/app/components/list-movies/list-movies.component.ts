@@ -8,7 +8,9 @@ import { ServiceService } from 'src/app/services/service.service';
 })
 export class ListMoviesComponent implements OnInit {
 
+  user: any;
   movies: any;
+  favMovies: any;
   totalMovies: any;
   searchResults: any;
   searchText: string;
@@ -19,6 +21,7 @@ export class ListMoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies(1);
+    // this.getFavMovies(1);
   }
 
   getMovies(pageNumber: number){
@@ -28,19 +31,15 @@ export class ListMoviesComponent implements OnInit {
     });
   }
 
+  // getFavMovies(id: number) {
+  //   this.service.getFavMovies(id).subscribe((favMovies: any) => {
+  //     this.favMovies = favMovies;
+  //     console.log(this.favMovies)
+  //   })
+  // }
+
   switchPage(event: any) {
     this.getMovies(event.pageIndex + 1);
-  }
-
-  searchInMovies() {
-    this.service.searchInMovies(this.searchText).subscribe((response: any) => {
-      this.searchResults = response.results;
-      console.log(this.searchResults)
-    });
-  }
-
-  userSearch(event: any) {
-    this.searchText = event;
   }
 
 }

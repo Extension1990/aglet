@@ -13,20 +13,22 @@ import { ListMoviesComponent } from './components/list-movies/list-movies.compon
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { LoginComponent } from './auth/login/login.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './auth/login/login.component';
+import { FavMoviesComponent } from './components/fav-movies/fav-movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     ListMoviesComponent,
     ViewMovieComponent,
     NavbarComponent,
     ContactComponent,
-    LoginComponent,
-    FooterComponent
+    FooterComponent,
+    FavMoviesComponent
   ],
   imports: [
     BrowserModule,
