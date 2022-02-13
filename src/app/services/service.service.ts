@@ -21,12 +21,6 @@ export class ServiceService {
     'Access-Control-Allow-Origin': '*',
   });
 
-  // httpOptions = {
-  //   headers: new HttpHeaders({ ContentType: 'application/json' })
-  // };
-  // headers = new HttpHeaders({ 'Content-Type': 'applications/form-data' });
-  // httpOption = { headers: this.headers };
-
   constructor(private http: HttpClient) {
     this.baseUrl = 'https://api.themoviedb.org/3/';
     this.apiKey = '0a520fed6022dc05bbf2aadd5687ada8';
@@ -50,16 +44,20 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}movie/top_rated?api_key=${this.apiKey}&page=${pageNumber}&language=${this.language}`);
   }
 
+  getFavMovies() {
+    return this.http.get(this.nodeServerUrl + 'fav-movies');
+  }
+
+  addFavMovie(id: string, title: string, poster_path: string, release_date: string){
+    return this.http.post(this.nodeServerUrl + 'add/fav-movie', {id, title, poster_path, release_date}, {responseType:'json'});
+  }
+
   getMovie(id: string) {
     return this.http.get(`${this.baseUrl}movie/${id}?api_key=${this.apiKey}`);
   }
 
   searchInMovies(searchText: string) {
     return this.http.get(`${this.searchUrl}search/movie?api_key=${this.apiKey}&query=${searchText}`);
-  }
-
-  getFavMovies(id: number) {
-    return this.http.get(`https://api.themoviedb.org/3/account/${id}/favorite/movies?api_key=${this.apiKey}&language=en-US&sort_by=created_at.asc&page=1`);
   }
 
 }

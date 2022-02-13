@@ -27,7 +27,7 @@
           <a class="nav-link" aria-current="page" [routerLink]="['/movies']">All Movies</a>
         </li>
         <li class="nav-item" routerLinkActive="active-link">
-          <a class="nav-link text-warning" aria-current="page">{{user.username}}</a>
+          <a class="nav-link text-warning" aria-current="page" [routerLink]="['/fav-movies']">{{user.username}}</a>
         </li>&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
           <a class="nav-link" class="btn btn-danger btn-sm" aria-current="page" (click)="logout()">Logout</a>

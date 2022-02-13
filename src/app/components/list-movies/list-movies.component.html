@@ -15,7 +15,7 @@
 <hr class="mt-0">
 <div class="row">
   <div class="col-md-4" *ngFor="let movie of movies | filter:searchText">
-    <div class="card bg-light mx-auto mb-2" [routerLink]="['/movie/', movie.id]">
+    <div class="card bg-light mx-auto mb-2">
       <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{movie?.poster_path}}" height="300" alt="" srcset="">
       <div class="card-content bg-dark text-white p-3">
         <p class="mb-0">{{ movie.title }}</p>
@@ -24,8 +24,14 @@
             <p class="date mb-0">Date: <i class="text-warning">{{ movie.release_date }}</i></p>
           </div>
           <div class="col-md-4 mt-1">
-            <mat-icon aria-hidden="false" aria-label="Example plus icon" class="plus">add</mat-icon>
-            <mat-icon aria-hidden="false" aria-label="Example favorite icon" class="heart">favorite</mat-icon>
+            <form action="" method="post">
+              <input name="id" [(ngModel)]="movie.id" type="hidden"/>
+              <input name="id" [(ngModel)]="movie.title" type="hidden"/>
+              <input name="id" [(ngModel)]="movie.poster_path" type="hidden"/>
+              <input name="id" [(ngModel)]="movie.release_date" type="hidden"/>
+              <mat-icon aria-hidden="false" aria-label="Example plus icon" class="plus" [routerLink]="['/movie/', movie.id]">add</mat-icon>
+              <a href="" aria-hidden="false" aria-label="Example favorite icon" class="heart" (click)="addFavMovie(movie.id, movie.title, movie.poster_path, movie.release_date)">favorite</a>
+            </form>
           </div>
         </div>
       </div>
