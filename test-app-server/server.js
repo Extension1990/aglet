@@ -26,10 +26,10 @@ connection.connect((err) => {
     }
 })
 
-require('./server/get')(app, connection);
-require('./server/post')(app, connection);
-require('./server/auth')(app, fs, jwt);
-require('./server/login')(app, connection);
+require('./routes/get')(app, connection);
+require('./routes/post')(app, connection);
+require('./routes/auth')(app, fs, jwt);
+require('./routes/login')(app, connection);
 
 app.get('/', (req, res) => {
     res.send('Aglet test API')

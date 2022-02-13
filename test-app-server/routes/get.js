@@ -1,9 +1,5 @@
 module.exports = function (app, connection) {
-
-    app.get('/test', (req, res) => {
-       res.send('Testing Aglet Test App API server')
-    });
-
+    
     // Get user
     app.get('/user', (req, res) => {
         const user = req.body;
@@ -11,10 +7,20 @@ module.exports = function (app, connection) {
             if (err) {
                 res.status(400).send('User Not Found')
             } else {
-                console.log(`User received for Id: ${req.params.id}  Db:\n`);
-                console.log(rows);
                 res.status(200).send(rows)
             }
         });
-    })
+    });
+
+    // Get favoritemovies
+    app.get('/fav-movies', (req, res) => {
+        const favmovies = req.body;
+        connection.query('SELECT * FROM movieapp.favmovies', favmovies, (err, rows) => {
+            if (err) {
+                res.status(400).send('Movies Not Found')
+            } else {
+                res.status(200).send(rows)
+            }
+        });
+    });
 }

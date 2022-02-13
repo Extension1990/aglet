@@ -8,10 +8,8 @@ module.exports = function (app, connection) {
             
             connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], function(error, results, fields) {
 
-                // If there is an issue with the query, output the error
                 if (error) throw error;
 
-                // If the account exists
                 if (results.length > 0) {
                     response.send(results);
                 } else {
