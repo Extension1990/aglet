@@ -14,7 +14,7 @@
   </div>
   <hr class="mt-0">
 
-<div class="row">
+  <div class="row" *ngIf="favMovies">
     <div class="col-md-4" *ngFor="let favMovie of favMovies | filter:searchText">
       <div class="card bg-light mx-auto mb-2" [routerLink]="['/movie/', favMovie.id]">
         <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{favMovie?.poster_path}}" height="300" alt="" srcset="">
@@ -29,4 +29,15 @@
       </div>
     </div>
   </div>
+  <div class="row" *ngIf="favMovies.length === 0">
+    <div class="col-md-6">
+      <p class="text-danger">You have no favorite movies added yet.</p>
+    </div>
+    <div class="col-md-6">
+      <a [routerLink]="['/movies']" class="float-end">
+        Add Favorite Movies
+      </a>
+    </div>
+  </div>
+<!-- </div> -->
   <mat-paginator [length]="totalMovies" class="mt-3" [pageSize]="9" (page)="switchPage($event)"></mat-paginator>
