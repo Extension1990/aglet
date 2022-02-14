@@ -9,6 +9,7 @@ import { FavMoviesComponent } from './components/fav-movies/fav-movies.component
 const routes: Routes = [
   { path: '', component: ListMoviesComponent },
   { path: 'movies', component: ListMoviesComponent },
+  { path: 'all-movies', component: ListMoviesComponent },
   { path: 'movie/:id', component: ViewMovieComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },

@@ -9,10 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" routerLinkActive="active-link">
-          <a class="nav-link" aria-current="page" [routerLink]="['/movies']">All Movies</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/all-movies']">All Movies</a>
         </li>
         <li class="nav-item" routerLinkActive="active-link">
-          <a class="nav-link text-warning" aria-current="page" [routerLink]="['/fav-movies']">{{user.username}}</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/fav-movies']">Favorite Movies</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active-link">
+          <a class="nav-link" aria-current="page"><b class="username">{{user.username}}</b></a>
         </li>&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
           <a class="nav-link" class="btn btn-danger btn-sm" aria-current="page" (click)="logout()">Logout</a>
