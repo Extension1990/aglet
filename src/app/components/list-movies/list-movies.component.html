@@ -22,6 +22,7 @@
         <div class="row">
           <div class="col-md-8 pt-2">
             <p class="date mb-0">Date: <i class="text-warning">{{ movie.release_date }}</i></p>
+              <a aria-hidden="false" aria-label="Example plus icon" class="plus" [routerLink]="['/movie/', movie.id]">view</a>
           </div>
           <div class="col-md-4 mt-1">
             <form action="" method="post">
@@ -29,7 +30,6 @@
               <input name="id" [(ngModel)]="movie.title" type="hidden"/>
               <input name="id" [(ngModel)]="movie.poster_path" type="hidden"/>
               <input name="id" [(ngModel)]="movie.release_date" type="hidden"/>
-              <mat-icon aria-hidden="false" aria-label="Example plus icon" class="plus" [routerLink]="['/movie/', movie.id]">add</mat-icon>
               <a href="" aria-hidden="false" aria-label="Example favorite icon" class="heart" (click)="addFavMovie(movie.id, movie.title, movie.poster_path, movie.release_date)">favorite</a>
             </form>
           </div>

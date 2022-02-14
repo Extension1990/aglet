@@ -37,10 +37,8 @@ export class ListMoviesComponent implements OnInit {
 
   
   addFavMovie(id:string, title: string, poster_path: string, release_date: string) {
-    console.log(id)
     this.service.addFavMovie(id, title, poster_path, release_date).subscribe((favMovie) => {
-      
-    })
+    });
   }
 
 }

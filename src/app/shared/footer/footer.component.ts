@@ -13,8 +13,8 @@ export class FooterComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit(): void {
-    // this.loggedInUser = localStorage.getItem("userData");
-    // this.user = JSON.parse(this.loggedInUser);
+    this.loggedInUser = localStorage.getItem("userData");
+    this.user = JSON.parse(this.loggedInUser);
   }
 
   logout() {

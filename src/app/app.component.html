@@ -1,5 +1,5 @@
-<app-navbar *ngIf="!user"></app-navbar>
-<app-footer *ngIf="user"></app-footer>
+<app-navbar *ngIf="router.url !== '/fav-movies'"></app-navbar>
+<app-footer *ngIf="router.url === '/fav-movies', user"></app-footer>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
