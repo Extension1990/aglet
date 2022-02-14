@@ -13,7 +13,7 @@ module.exports = function (app, connection) {
     });
 
     // Get favoritemovies
-    app.get('/fav-movies', (req, res) => {
+    app.get('/fav-movies/'+ 1, (req, res) => {
         const favmovies = req.body;
         connection.query('SELECT * FROM movieapp.favmovies', favmovies, (err, rows) => {
             if (err) {

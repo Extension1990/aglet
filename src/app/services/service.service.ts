@@ -44,8 +44,8 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}movie/top_rated?api_key=${this.apiKey}&page=${pageNumber}&language=${this.language}`);
   }
 
-  getFavMovies() {
-    return this.http.get(this.nodeServerUrl + 'fav-movies');
+  getFavMovies(pageNumber: number) {
+    return this.http.get(this.nodeServerUrl + 'fav-movies/' + pageNumber);
   }
 
   addFavMovie(id: string, title: string, poster_path: string, release_date: string){

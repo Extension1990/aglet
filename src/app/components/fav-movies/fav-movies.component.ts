@@ -18,18 +18,18 @@ export class FavMoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getFavMovies();
+    this.getFavMovies(1);
   }
 
-  getFavMovies(){
-    this.service.getFavMovies().subscribe((favMovies: any) => {
-      this.favMovies = favMovies;
+  getFavMovies(pageNumber: number){
+    this.service.getFavMovies(pageNumber).subscribe((favMovies: any) => {
+      this.favMovies = favMovies.slice(0,9);
       this.totalMovies = favMovies.length;
     });
   }
 
   switchPage(event: any) {
-    // this.getFavMovies(event.pageIndex + 1);
+    this.getFavMovies(event.pageIndex + 1);
   }
 
 }
