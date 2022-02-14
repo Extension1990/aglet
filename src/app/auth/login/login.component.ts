@@ -29,10 +29,8 @@ export class LoginComponent implements OnInit {
           }
         },
         err => {
-          // this.router.navigate(["/movies"]);
           this.emailErr = 'Incorrect email';
-            this.passwordErr = 'Incorrect password';
-            console.log(this.emailErr, this.passwordErr)
+          this.passwordErr = 'Incorrect password';
         }
       );
   }
