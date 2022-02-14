@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  user: any;
+  loggedInUser: any;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+    // this.loggedInUser = localStorage.getItem("userData");
+    // this.user = JSON.parse(this.loggedInUser);
   }
 
+  logout() {
+    localStorage.removeItem('userData');
+    this.router.navigate(["/login"]);
+  }
 }

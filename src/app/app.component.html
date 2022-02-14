@@ -1,5 +1,5 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="!user"></app-navbar>
+<app-footer *ngIf="user"></app-footer>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-<!-- <app-footer></app-footer> -->

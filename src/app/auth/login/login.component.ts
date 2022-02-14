@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   user: any;
+  emailErr: string;
+  passwordErr: string;
 
   constructor(private service: ServiceService, public router: Router) { }
 
@@ -19,21 +21,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(email: string, password: string) {
-    
-    // const serverData: any = "";
 
-    this.service
-      .login(email, password)
-      .subscribe(
-        (data: any) => {
+    this.service.login(email, password).subscribe((data: any) => {
           localStorage.setItem("userData", JSON.stringify(data[0]));
-          console.log(data[0]);
           if (data.length === 1) {
             this.router.navigate(["/fav-movies"]);
           }
         },
         err => {
-          this.router.navigate(["/movies"]);
+          // this.router.navigate(["/movies"]);
+          this.emailErr = 'Incorrect email';
+            this.passwordErr = 'Incorrect password';
+            console.log(this.emailErr, this.passwordErr)
         }
       );
   }

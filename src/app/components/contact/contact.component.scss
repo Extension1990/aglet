@@ -23,6 +23,18 @@ textarea:focus, input:focus{
     outline: none !important;
 }
 
+.btn-linkedIn {
+    background-color: blue;
+    color: white;
+}
+.btn-facebook {
+    color: blue;
+    font-weight: 600;
+}
+.btn-twitter {
+    color: white;
+}
+
 @media screen and (max-width: 992px) {
     .phone {
         margin-top: 20px;
@@ -33,5 +45,8 @@ textarea:focus, input:focus{
     }
     .header {
         margin-bottom: 15px !important;
+    }
+    .btn-facebook, .btn-twitter {
+        margin-top: 10px;
     }
 }
