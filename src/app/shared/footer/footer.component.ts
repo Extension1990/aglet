@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class FooterComponent implements OnInit {
   user: any;
   loggedInUser: any;
+  successAlert: any;
 
   constructor(public router: Router) { }
 

@@ -14,6 +14,7 @@ export class ListMoviesComponent implements OnInit {
   totalMovies: any;
   searchResults: any;
   searchText: string;
+  successAlert: any;
 
   constructor(private service: ServiceService) {
     this.searchText = '';
@@ -37,7 +38,10 @@ export class ListMoviesComponent implements OnInit {
 
   
   addFavMovie(id:string, title: string, poster_path: string, release_date: string) {
-    this.service.addFavMovie(id, title, poster_path, release_date).subscribe((favMovie) => {
+    this.service.addFavMovie(id, title, poster_path, release_date).subscribe((favMovie: any) => {
+      this.service.getMovie(id).subscribe((movie: any) => {
+        this.successAlert = movie;
+      });
     });
   }
 

@@ -8,10 +8,10 @@
     <!-- If user is logged in -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item" routerLinkActive="active-link">
+        <li class="nav-item" [class.active]="router.url==='/all-movies'">
           <a class="nav-link" aria-current="page" [routerLink]="['/all-movies']">All Movies</a>
         </li>
-        <li class="nav-item" routerLinkActive="active-link">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" aria-current="page" [routerLink]="['/fav-movies']">Favorite Movies</a>
         </li>
         <li class="nav-item" routerLinkActive="active-link">

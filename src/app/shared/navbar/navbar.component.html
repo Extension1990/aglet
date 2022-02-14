@@ -8,10 +8,10 @@
     <!-- If user is not loggedin -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="!user">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item" routerLinkActive="active-link">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" aria-current="page" [routerLink]="['/movies']">Movies</a>
         </li>
-        <li class="nav-item" routerLinkActive="active-link">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" aria-current="page" [routerLink]="['/contact']">Contact</a>
         </li>&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
